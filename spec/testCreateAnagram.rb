@@ -34,13 +34,23 @@ describe "CreateAnagram" do
     end
   end
 
-    let (:anagram3)  {CreateAnagram.new('rrrsssdddttt', 'redroute')}
+  let (:anagram3)  {CreateAnagram.new('rrrsssdddttt', 'redroute')}
 
-    describe '#count_changes' do
-      it 'counts the characters needed to create an anagram' do
-        anagram3.create
-        expect(anagram3.counter).to eq(8)
-      end
+  describe '#count_changes' do
+    it 'counts the characters needed to create an anagram' do
+      anagram3.create
+      expect(anagram3.counter).to eq(8)
     end
-
   end
+
+  let (:anagram4)  {CreateAnagram.new('dogs', 'gods')}
+
+  describe '#count_changes' do
+    it 'counts the characters needed to create an anagram' do
+      anagram4.create
+      expect(anagram4.counter).to eq(0)
+    end
+  end
+
+
+end
